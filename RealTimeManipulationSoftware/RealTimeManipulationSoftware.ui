@@ -1,0 +1,1285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RealTimeManipulationSoftwareClass</class>
+ <widget class="QMainWindow" name="RealTimeManipulationSoftwareClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1401</width>
+    <height>848</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>RealTimeManipulationSoftware</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>480</y>
+      <width>311</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start capture</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>551</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">Background-color: #000;</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>30</y>
+      <width>551</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">Background-color: #000;</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="loadVideoButton">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>480</y>
+      <width>311</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Load video from file</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="stopVideoButton">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>610</y>
+      <width>311</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stop video</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="saveVideo">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>610</y>
+      <width>311</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save video</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="transformationList">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>430</y>
+      <width>551</width>
+      <height>351</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>10</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>50</weight>
+      <bold>false</bold>
+      <strikeout>false</strikeout>
+     </font>
+    </property>
+    <property name="text">
+     <string>Manipulated</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Original</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>410</y>
+      <width>311</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Effects applied in order (click on the effect to delete)</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1401</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuBasics">
+    <property name="title">
+     <string>Basics</string>
+    </property>
+    <addaction name="actionRed_Image"/>
+    <addaction name="actionGreen_Image"/>
+    <addaction name="actionBlue_Image"/>
+    <addaction name="actionChange_Color_Space"/>
+    <addaction name="actionInvert_Image"/>
+    <addaction name="actionConvert_to_Color"/>
+    <addaction name="actionChange_Contrast"/>
+   </widget>
+   <widget class="QMenu" name="menuSegmentation">
+    <property name="title">
+     <string>Segmentation</string>
+    </property>
+    <addaction name="actionCreate_Segmentation"/>
+   </widget>
+   <widget class="QMenu" name="menuVideo_operations">
+    <property name="title">
+     <string>Video operations</string>
+    </property>
+    <addaction name="actionBackground_subtraction_using_KNN"/>
+    <addaction name="actionBackground_subtraction_using_MOG2"/>
+   </widget>
+   <widget class="QMenu" name="menuSmoothing_images">
+    <property name="title">
+     <string>Smoothing</string>
+    </property>
+    <addaction name="actionMean_Blur"/>
+    <addaction name="actionMedian_Blur"/>
+    <addaction name="actionGaussian_Blur"/>
+   </widget>
+   <widget class="QMenu" name="menuAutomatic_operations">
+    <property name="title">
+     <string>Automatic operations</string>
+    </property>
+    <addaction name="actionContrast_Streching"/>
+    <addaction name="actionEqualize_histogram"/>
+    <addaction name="actionBrightness_and_Contrast_Auto"/>
+    <addaction name="actionBack_Projection"/>
+   </widget>
+   <widget class="QMenu" name="menuMorphologic_Transformations">
+    <property name="title">
+     <string>Morphologic Transformations</string>
+    </property>
+    <addaction name="actionErode"/>
+    <addaction name="actionDilate"/>
+    <addaction name="actionOpening"/>
+    <addaction name="actionClosing"/>
+    <addaction name="actionMorphological_Gradient"/>
+    <addaction name="actionTop_Hat"/>
+    <addaction name="actionBlack_Hat"/>
+   </widget>
+   <widget class="QMenu" name="menuThresholding_operations">
+    <property name="title">
+     <string>Thresholding operations</string>
+    </property>
+    <addaction name="actionThreshold_Binary"/>
+    <addaction name="actionThreshold_Binary_Inverted"/>
+    <addaction name="actionTruncate"/>
+    <addaction name="actionThreshold_to_Zero"/>
+    <addaction name="actionThreshold_to_Zero_Inverted"/>
+   </widget>
+   <widget class="QMenu" name="menuEdge_detectors">
+    <property name="title">
+     <string>Edge detectors</string>
+    </property>
+    <addaction name="actionSobel_Operator"/>
+    <addaction name="actionCanny_Detector"/>
+    <addaction name="actionDetect_edges_with_Dilate"/>
+    <addaction name="actionLaplace_Operator"/>
+    <addaction name="actionFind_and_Draw_Contours"/>
+   </widget>
+   <widget class="QMenu" name="menuCorner_detection">
+    <property name="title">
+     <string>Corner detection</string>
+    </property>
+    <addaction name="actionHarris_Corner_Detection"/>
+    <addaction name="actionShi_Tomasi_Corner_Detection"/>
+   </widget>
+   <addaction name="menuBasics"/>
+   <addaction name="menuSegmentation"/>
+   <addaction name="menuVideo_operations"/>
+   <addaction name="menuSmoothing_images"/>
+   <addaction name="menuAutomatic_operations"/>
+   <addaction name="menuMorphologic_Transformations"/>
+   <addaction name="menuThresholding_operations"/>
+   <addaction name="menuEdge_detectors"/>
+   <addaction name="menuCorner_detection"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionChange_Brightness">
+   <property name="text">
+    <string>Change Brightness</string>
+   </property>
+  </action>
+  <action name="actionChange_Contrast">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Change Brightness and Contrast</string>
+   </property>
+  </action>
+  <action name="actionRed_Image">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Red Image</string>
+   </property>
+  </action>
+  <action name="actionGreen_Image">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Green Image</string>
+   </property>
+  </action>
+  <action name="actionBlue_Image">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Blue Image</string>
+   </property>
+  </action>
+  <action name="actionDraw_Grid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Draw Grid</string>
+   </property>
+  </action>
+  <action name="actionConvert_to_Color">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Change Color...</string>
+   </property>
+  </action>
+  <action name="actionChange_Color_Space">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Grey Image</string>
+   </property>
+  </action>
+  <action name="actionInvert_Image">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Invert Image</string>
+   </property>
+  </action>
+  <action name="actionCreate_Segmentation">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Create Segmentation</string>
+   </property>
+  </action>
+  <action name="actionBackground_subtraction_using_KNN">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Background subtraction using KNN</string>
+   </property>
+  </action>
+  <action name="actionBackground_subtraction_using_MOG2">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Backgorund subtraction using MOG2</string>
+   </property>
+  </action>
+  <action name="actionMean_Blur">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Mean Blur</string>
+   </property>
+  </action>
+  <action name="actionMedian_Blur">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Median Blur</string>
+   </property>
+  </action>
+  <action name="actionGaussian_Blur">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Gaussian Blur</string>
+   </property>
+  </action>
+  <action name="actionContrast_Streching">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Contrast Streching</string>
+   </property>
+  </action>
+  <action name="actionEqualize_histogram">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Equalize histogram</string>
+   </property>
+  </action>
+  <action name="actionBrightness_and_Contrast_Auto">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Brightness and Contrast Auto</string>
+   </property>
+  </action>
+  <action name="actionBack_Projection">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Back Projection</string>
+   </property>
+  </action>
+  <action name="actionErode">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Erode</string>
+   </property>
+  </action>
+  <action name="actionDilate">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Dilate</string>
+   </property>
+  </action>
+  <action name="actionOpening">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Opening</string>
+   </property>
+  </action>
+  <action name="actionClosing">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Closing</string>
+   </property>
+  </action>
+  <action name="actionMorphological_Gradient">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Morphological Gradient</string>
+   </property>
+  </action>
+  <action name="actionTop_Hat">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Top Hat</string>
+   </property>
+  </action>
+  <action name="actionBlack_Hat">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Black Hat</string>
+   </property>
+  </action>
+  <action name="actionThreshold_Binary">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Threshold Binary</string>
+   </property>
+  </action>
+  <action name="actionThreshold_Binary_Inverted">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Threshold Binary Inverted</string>
+   </property>
+  </action>
+  <action name="actionTruncate">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Truncate</string>
+   </property>
+  </action>
+  <action name="actionThreshold_to_Zero">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Threshold to Zero</string>
+   </property>
+  </action>
+  <action name="actionThreshold_to_Zero_Inverted">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Threshold to Zero Inverted</string>
+   </property>
+  </action>
+  <action name="actionSobel_Operator">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Sobel Operator</string>
+   </property>
+  </action>
+  <action name="actionCanny_Detector">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Canny Detector</string>
+   </property>
+  </action>
+  <action name="actionDetect_edges_with_Dilate">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Detect edges with Dilate</string>
+   </property>
+  </action>
+  <action name="actionLaplace_Operator">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Laplace Operator</string>
+   </property>
+  </action>
+  <action name="actionFind_and_Draw_Contours">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Find and Draw Contours</string>
+   </property>
+  </action>
+  <action name="actionHarris_Corner_Detection">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Harris Corner Detection</string>
+   </property>
+  </action>
+  <action name="actionShi_Tomasi_Corner_Detection">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Shi-Tomasi Corner Detection</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="RealTimeManipulationSoftware.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionChange_Contrast</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>setBrightnessContrast()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionGreen_Image</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>setGreenImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRed_Image</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>setRedImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBlue_Image</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>setBlueImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDraw_Grid</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>drawGrid()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionConvert_to_Color</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_changeColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionChange_Color_Space</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>setColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionInvert_Image</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_invertImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>loadVideoButton</sender>
+   <signal>clicked()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_loadFromFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>992</x>
+     <y>550</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>587</x>
+     <y>-14</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>stopVideoButton</sender>
+   <signal>clicked()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_stopVideoButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>895</x>
+     <y>721</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>704</x>
+     <y>-8</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saveVideo</sender>
+   <signal>clicked()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_saveVideo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1164</x>
+     <y>714</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>755</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCreate_Segmentation</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_createSegmentation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBackground_subtraction_using_KNN</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_backgroundSubtractionKNN()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBackground_subtraction_using_MOG2</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_backgroundSubtractionMOG2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMean_Blur</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_meanBlur()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMedian_Blur</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_medianBlur()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionGaussian_Blur</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_gaussianBlur()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBack_Projection</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_backProj()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEqualize_histogram</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_equalizeHist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionContrast_Streching</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_contrastStreching()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBrightness_and_Contrast_Auto</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_brightContAuto()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionErode</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_erode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDilate</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_dilate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpening</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_opening()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionClosing</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_closing()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMorphological_Gradient</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_morphologicalGradient()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBlack_Hat</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_blackHat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTop_Hat</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_topHat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionThreshold_Binary</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_thresBinary()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionThreshold_Binary_Inverted</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_thresBinaryInv()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTruncate</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_truncate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionThreshold_to_Zero</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_thresZero()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionThreshold_to_Zero_Inverted</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_thresZeroInv()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCanny_Detector</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_cannyOperator()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSobel_Operator</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_sobelOperator()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDetect_edges_with_Dilate</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_detectEdgesDilate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFind_and_Draw_Contours</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_drawContours()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLaplace_Operator</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_laplaceOperator()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionHarris_Corner_Detection</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_harrisCornerDetection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShi_Tomasi_Corner_Detection</sender>
+   <signal>triggered()</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_shiTomasiCornerDetection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>transformationList</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>RealTimeManipulationSoftwareClass</receiver>
+   <slot>action_transformationClicked(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>444</x>
+     <y>636</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>598</x>
+     <y>651</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>getOriginalHistogram()</slot>
+  <slot>getTransformedHistogram()</slot>
+  <slot>setBrightnessContrast()</slot>
+  <slot>setBlueImage()</slot>
+  <slot>setRedImage()</slot>
+  <slot>setGreenImage()</slot>
+  <slot>drawGrid()</slot>
+  <slot>setColor()</slot>
+  <slot>action_changeColor()</slot>
+  <slot>action_invertImage()</slot>
+  <slot>action_loadFromFile()</slot>
+  <slot>action_stopVideoButton()</slot>
+  <slot>action_saveVideo()</slot>
+  <slot>action_createSegmentation()</slot>
+  <slot>action_backgroundSubtractionKNN()</slot>
+  <slot>action_backgroundSubtractionMOG2()</slot>
+  <slot>action_meanBlur()</slot>
+  <slot>action_medianBlur()</slot>
+  <slot>action_gaussianBlur()</slot>
+  <slot>action_equalizeHist()</slot>
+  <slot>action_contrastStreching()</slot>
+  <slot>action_backProj()</slot>
+  <slot>action_brightContAuto()</slot>
+  <slot>action_erode()</slot>
+  <slot>action_dilate()</slot>
+  <slot>action_opening()</slot>
+  <slot>action_closing()</slot>
+  <slot>action_morphologicalGradient()</slot>
+  <slot>action_topHat()</slot>
+  <slot>action_blackHat()</slot>
+  <slot>action_thresBinary()</slot>
+  <slot>action_thresBinaryInv()</slot>
+  <slot>action_truncate()</slot>
+  <slot>action_thresZero()</slot>
+  <slot>action_thresZeroInv()</slot>
+  <slot>action_sobelOperator()</slot>
+  <slot>action_cannyOperator()</slot>
+  <slot>action_detectEdgesDilate()</slot>
+  <slot>action_drawContours()</slot>
+  <slot>action_laplaceOperator()</slot>
+  <slot>action_harrisCornerDetection()</slot>
+  <slot>action_shiTomasiCornerDetection()</slot>
+  <slot>action_transformationClicked(QListWidgetItem*)</slot>
+ </slots>
+</ui>
