@@ -59,3 +59,6 @@ The effects that can be applied to the videos are:
 * Corner detection:
 	* Harris corner detection
 	* Shi-tomasi corner detection
+
+Diogo Ferreira
+Luís Leira
