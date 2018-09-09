@@ -1,4 +1,4 @@
-# Real Time Manipulation Software
+#Real Time Manipulation Software
 
 Project done during classes of Computer Vision (Universidade de Aveiro), 2017
 
@@ -6,7 +6,7 @@ Application done using Qt and OpenCV, that demonstrates the application of sever
 
 The effects that can be applied to the videos are:
 
-* Red Image
+*Red Image
 * Blue Image
 * Green Image
 * Grey Image
