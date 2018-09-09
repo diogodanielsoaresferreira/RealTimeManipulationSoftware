@@ -5,8 +5,9 @@ Project done during classes of Computer Vision (Universidade de Aveiro), 2017
 Application done using Qt and OpenCV, that demonstrates the application of several images processing algorithms to saved videos or to webcam captured videos.
 
 The effects that can be applied to the videos are:
+
 * Red Image
-* BLue Image
+* Blue Image
 * Green Image
 * Grey Image
 * Invert image
