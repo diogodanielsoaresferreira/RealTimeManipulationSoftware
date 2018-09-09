@@ -6,46 +6,56 @@ Application done using Qt and OpenCV, that demonstrates the application of sever
 
 The effects that can be applied to the videos are:
 
-* Red Image
-* Blue Image
-* Green Image
-* Grey Image
-* Invert image
-* Change Color
-* Change brightness and contrast
+* Basics:
+	* Red Image
+	* Blue Image
+	* Green Image
+	* Grey Image
+	* Invert image
+	* Change Color
+	* Change brightness and contrast
 
-* Create Segmentation
+* Segmentation:
+	* Create Segmentation
 
-* Background subtraction using KNN
-* Background subtraction using MOG
+* Video Operations:
+	* Background subtraction using KNN
+	* Background subtraction using MOG
 
-* Mean blur
-* Median blur
-* Gaussian blur
+* Smoothing:
+	* Mean blur
+	* Median blur
+	* Gaussian blur
 
-* Contrast streching
-* Equalize histogram
-* Brightness and contrast auto
-* Back projection
+* Automatic operations:
+	* Contrast streching
+	* Equalize histogram
+	* Brightness and contrast auto
+	* Back projection
 
-* Erode
-* Dilate
-* Opening
-* Closing
-* Morphological gradient
-* Top hat
-* Black hat
-* Threshold binary
-* Threshold binary inverted
-* Truncate
-* Truncate to zero
-* Truncate to zero inverted
+* Morphologic transformations:
+	* Erode
+	* Dilate
+	* Opening
+	* Closing
+	* Morphological gradient
+	* Top hat
+	* Black hat
 
-* Sobel operator
-* Canny detector
-* Detect edges with dilate
-* Laplace operator
-* Find and draw contours
+* Thresholding operations:
+	* Threshold binary
+	* Threshold binary inverted
+	* Truncate
+	* Truncate to zero
+	* Truncate to zero inverted
 
-* Harris corner detection
-* Shi-tomasi corner detection
+* Edge detectors:
+	* Sobel operator
+	* Canny detector
+	* Detect edges with dilate
+	* Laplace operator
+	* Find and draw contours
+
+* Corner detection:
+	* Harris corner detection
+	* Shi-tomasi corner detection
